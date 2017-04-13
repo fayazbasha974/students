@@ -1,19 +1,20 @@
 var mongoose = require('mongoose');
 mongoose.Promise = require('bluebird');
+var crypto = require('crypto'); 
 
 var signup = mongoose.Schema({
   firstName: String,
   lastName: String,
   email: String,
-  password: String,
-  confirmPassword: String,
+  hash: String,
+  salt: String,
   country : String,
   program : String,
   phone : Number
 });
 
-signup.methods.setPassword = function(password) {
-  res.json("hai sa")
+signup.method.setPassword = function(password) {
+  console.log("set password");
   this.salt = crypto.randomBytes(16).toString('hex');
   this.hash = crypto.pbkdf2Sync(password, this.salt, 1000, 64, 'sha1').toString('hex');
 } 
