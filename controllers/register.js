@@ -60,10 +60,10 @@ exports.forgotPassword = function(req,res) {
                     auth: {
                         type:'OAuth2', 
                         user:'vinaykumar0459@gmail.com', 
-                        clientId:'981378050453-d9qvnja1ai882jqjqhgiuulfb6h1q0hi.apps.googleusercontent.com', 
-                        clientSecret:'jJWSuaKE6Wqhf1jz9Zw9rkiv', 
-                        refreshToken:'1/G4XELGyX2sKvmZuTStVfjoLt3a5l27QqXWSaJKMvTyk', 
-                        accessToken:'ya29.GlsqBOCn39Djr6F9CbEGXkRCnWUqx_osQY9N8FTPT4hvQmWb17j0TnxEIlDgQPW81aO8fKbgszXLnzO-IidQ0DREdaUSNJHql5BLH3zDheGT-wUpW5ZkLGATyxnh'
+                        clientId:'981378050453-0kmrf8v53pnfda00e0mllmksnnsu7a7q.apps.googleusercontent.com', 
+                        clientSecret:'o2YiqEtCmLaDr_O7Czvl4PJF', 
+                        refreshToken:'1/i3gjKgMdnT97lM3vziLbautNVKEB2zdjYqzPzIakJkUAM6-H_oixTJlQxcUCg0Nq', 
+                        accessToken:'ya29.GlssBBt4aCMk2ae7kta_LCgQHKjPkFVFuYQ2VxcoYbRQlTAM8BgwXMSxRmTs0sommAxTchDE3fIY0t9jvf9KMN6s1y_f--IjqkPSziMut__C6wAoJHw3B2JiJlYX'
                     }
                     });
                     var mailOptions = {
@@ -96,11 +96,11 @@ exports.changePassword = function(req,res) {
             if(docs != null) {
                 var hash = docs.validPassword(req.body.password);
                 if(hash == true) {
-                    var np = docs.setPassword(req.body.updatepassword);
-                    userdetails.update({emailId: req.body.emailId}, {$set: {hash: np}}, function(err, data) {
+                    docs.setPassword(req.body.updatepassword);
+                    docs.save(function(err,data){
                         if(err) throw err;
                         else {
-                            res.json('updated password '+ data[0]);
+                            res.json({success: true, msg : 'Password Updated Successfully', code : 1});
                         }
                     });
                 } else {
