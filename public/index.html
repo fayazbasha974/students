@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>InnoBook</title>
+  <!-- Favicon and touch icons -->
+    <link rel="shortcut icon" href="assets/ico/fav.png">
+  <!-- CSS -->
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.css">
+  <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="assets/css/form-elements.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/p.css">
+  <link rel="stylesheet" href="assets/css/v.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css">
+</head>
+<!-- Main Navigation 
+  ================================================== -->
+<nav id="tf-menu" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand logo" href="#"><img src="img/logo.png" alt="..."></a>
+        </div>
+    </div><!-- /.container-fluid -->
+</nav>
+
+<body ng-app="myApp" ng-controller="myCtrl">
+
+<div ng-view>
+  
+  
+</div>
+
+<!-- Footer 
+    ================================================== -->
+    <div id="tf-footer">
+        <div class="container"><!-- container -->
+            <p class="pull-left">© 2006 - 2017 All Rights Reserved</p> <!-- copyright text here-->
+        </div><!-- end container -->
+    </div>
+<!-- Js libraries -->
+
+<script src="assets/js/jquery-1.11.1.min.js"></script>
+<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="assets/js/jquery.backstretch.min.js"></script>
+<script src="assets/js/retina-1.1.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+<script src="assets/js/scripts.js"></script>
+<script src="javascripts/innobook.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+<script src="https://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.12.0.js"></script>
+<script src="javascripts/localstorage.min.js"></script>
+
+<!-- app.js -->
+
+<script src="app.js"></script>
+
+<!-- Factories -->
+
+<script src="factories/factories.js"></script>
+
+<!-- Controllers -->
+
+<script src="controllers/homecontroller.js"></script>
+<script src="controllers/logincontroller.js"></script>
+<script src="controllers/profilecontroller.js"></script>
+<script src="controllers/editprofilecontroller.js"></script>
+<script src="controllers/userprofilecontroller.js"></script>
+</body>
+</html>
