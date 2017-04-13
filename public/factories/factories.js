@@ -1,17 +1,17 @@
-app.factory('signup',function($http,$q){
+//custom factory all the api's except login
+app.factory('customFactory',function($http,$q){
     var object = {};
-    object.signup = function(data){
+    object.post = function(data){
+        console.log(object.url);
         var defered = $q.defer();
     $http({
-        url : '/register',
+        url : object.url,
         method : 'POST',
         data : data
     }).then(function(success){
         defered.resolve(success);
-        // console.log(success);
     },
         function(error){
-            // console.log(error);
             defered.reject(error);
         }
     )
@@ -19,6 +19,7 @@ app.factory('signup',function($http,$q){
     }
     return object;
 })
+// factory for login api only
 .factory('login',function($http,$q){
     var object = {};
     object.login = function(data){
@@ -27,26 +28,6 @@ app.factory('signup',function($http,$q){
         url : '/login',
         method : 'POST',
         data : data
-    }).then(function(success){
-        defered.resolve(success);
-        // console.log(success);
-    },
-        function(error){
-            // console.log(error);
-            defered.reject(error);
-        }
-    )
-    return defered.promise;
-    }
-    return object;
-})
-.factory('getusers',function($http,$q){
-    var object = {};
-    object.getusers = function(data){
-        var defered = $q.defer();
-    $http({
-        url : '/search',
-        method : 'GET'
     }).then(function(success){
         defered.resolve(success);
         // console.log(success);
