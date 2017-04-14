@@ -5,12 +5,12 @@ var xoauth2 = require('xoauth2');
 
 exports.insertUser = function(req, res){
     var user = new userdetails({
-        firstname: req.body.firstname,
-        lastname:   req.body.lastname,
-        emailId: req.body.emailId,
-        countryOfResidence: req.body.countryOfResidence,
-        programs: req.body.programs,
-        phonenumber: req.body.phonenumber
+        firstname: req.body.firstName,
+        lastname:   req.body.lastName,
+        emailId: req.body.email,
+        countryOfResidence: req.body.country,
+        programs: req.body.program,
+        phonenumber: req.body.phone
     });
    userdetails.find({emailId: req.body.emailId}, function(err,docs) { 
        if(err) throw err;

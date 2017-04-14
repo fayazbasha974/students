@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var signup = require('../controllers/signup');
+var register = require('../controllers/register');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -9,8 +9,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/', function(req, res, next) {
-	// res.json(req.body);
-  signup.signupUser(req,res);
+  register.insertUser(req,res);
 });
 
 module.exports = router;

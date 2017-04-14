@@ -17,7 +17,7 @@ mongoose.connection.on('error', function(err) {
 });
 
 var index = require('./routes/index');
-var signup = require('./routes/signup');
+var register = require('./routes/register');
 
 var app = express();
 var mongoose = require('mongoose');
@@ -35,7 +35,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
-app.use('/signup', signup);
+app.use('/register', register);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
