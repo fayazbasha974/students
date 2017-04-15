@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+var register = require('../controllers/register');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -7,16 +8,9 @@ router.get('/', function(req, res, next) {
   res.json("hai")
 });
 
-/*router.post('/login', function(req, res, next) {
+router.post('/', function(req, res, next) {
+	console.log(req.body);
   register.loginUser(req,res);
 });
-
-router.post('/forgotpassword', function(req,res,next) {
-  register.forgotPassword(req,res);
-});
-
-router.post('/changepassword', function(req,res,next) {
-  register.changePassword(req,res);
-});*/
 
 module.exports = router;

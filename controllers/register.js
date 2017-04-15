@@ -12,6 +12,7 @@ exports.insertUser = function(req, res){
         programs: req.body.program,
         phonenumber: req.body.phone
     });
+    // req.session.name = 'fayaz';
    userdetails.find({emailId: req.body.emailId}, function(err,docs) { 
        if(err) throw err;
        if (docs[0] != null) {
@@ -37,6 +38,7 @@ exports.loginUser = function(req,res) {
                 var hash = docs.validPassword(req.body.password);
                 if(hash == true) {
                     var token = docs.generateJwt();
+                    req.session.name = req.body.emailId;
                     res.json({ success : true, msg : 'User Logged in Successfully', code : 1, token : token})
                 } else {
                     res.json({ success : false, msg : 'Password incorrect', code : 1})
