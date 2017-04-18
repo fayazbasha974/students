@@ -1,4 +1,4 @@
-var app = angular.module("myApp", ["ngRoute","ui.bootstrap","ngStorage"]);
+var app = angular.module("myApp", ["ngRoute","ui.bootstrap","ngStorage", "mgo-angular-wizard"]);
 app.config(function($routeProvider, $locationProvider) {
 
     $routeProvider
@@ -10,9 +10,9 @@ app.config(function($routeProvider, $locationProvider) {
         templateUrl : "views/login.html",
         controller : "loginCtrl"
     })
-    .when("/editprofile", {
-        templateUrl : "views/editprofile.html",
-        controller : "editprofileCtrl"
+    .when("/application", {
+        templateUrl : "views/application.html",
+        controller : "applicationCtrl"
     })
     // $locationProvider.html5Mode({
     // enabled: true,
