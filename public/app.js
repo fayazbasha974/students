@@ -1,5 +1,6 @@
 var app = angular.module("myApp", ["ngRoute","ui.bootstrap","ngStorage"]);
-app.config(function($routeProvider) {
+app.config(function($routeProvider, $locationProvider) {
+
     $routeProvider
     .when("/", {
         templateUrl : "views/home.html",
@@ -13,14 +14,10 @@ app.config(function($routeProvider) {
         templateUrl : "views/editprofile.html",
         controller : "editprofileCtrl"
     })
-    .when("/profile", {
-        templateUrl : "views/profile.html",
-        controller : "profileCtrl"
-    })
-    .when("/userprofile", {
-        templateUrl : "views/userprofile.html",
-        controller : "userprofilecontroller"
-    })
+    // $locationProvider.html5Mode({
+    // enabled: true,
+    // requireBase: false
+    // });
 }).controller('myCtrl', function($scope){
-  console.log("main controller");
+//   console.log("main controller");
 });

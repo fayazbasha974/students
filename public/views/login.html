@@ -1,61 +1,40 @@
-    <!-- Top content -->
-    <div class="top-content">
-        <div class="logo">
-            <img src="assets/ico/logowhite.png">
-        </div>
-
-        <!-- Body content -->
-
-        <div class="inner-bg">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-7 text">
-                        <h1><strong>InnoBook</strong> Login Form</h1>
-                        <div class="description">
-                            <p>
-                                Login here to explore our InnoBook Social networking site..!
-                            </p>
-                        </div>
-                        <div class="top-big-link">
-                            <a class="btn btn-link-2" href="#/">Sign Up</a>
-                            <a class="btn btn-link-1" href="#/login">Sign In</a>
-                        </div>
-                    </div>
-                    <div class="col-sm-5 form-box">
-                        <div class="form-top">
-                            <div class="form-top-left">
-                                <h3>Sign In </h3>
-                                <p>Fill in the form below to get instant access:</p>
-                            </div>
-                            <div class="form-top-right">
-                                <i class="fa fa-pencil"></i>
-                            </div>
-                        </div>
-                        <div class="form-bottom">
-                            <form role="form" method="post" class="registration-form" name="login"  novalidate ng-submit="loginuser(user)">
-
-                                <div class="form-group"  ng-class="{ 'has-error' : login.email.$invalid && login.email.$touched || login.email.$error.email}">
-                                    <label class="sr-only" for="form-email">Email</label>
-                                    <input type="email" name="email" placeholder="Email..." class="form-control" ng-model="user.email" required>
-                                    <p ng-show="login.email.$invalid && login.email.$touched" class="help-block">email is required.
-                                    <span ng-show="login.email.$error.email" class="help-block">Not an email</span>
-                                    </p>
-                                    
-                                </div>
-
-
-                                <div class="form-group"  ng-class="{ 'has-error' : login.pwd.$invalid && login.pwd.$touched }">
-                                    <label class="sr-only" for="form-Password">Password</label>
-                                    <input type="password" name="pwd" placeholder="Password..." class="form-control" ng-model="user.pwd" required>
-                                    <p ng-show="login.pwd.$invalid && login.pwd.$touched" class="help-block">password is required.</p>
-                                </div>
-
-                                <button type="submit" class="btn" ng-disabled="login.$invalid">Sign In!</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
+<div id="tf-services" style="padding: 10% !important;">
+        <div class="container"> <!-- container -->
+            <div class="row" style="padding: 5%;" > <!-- row -->
+                
+                <div class="col-md-6 text-right">  <!-- Left Content Col 6 -->
+  <form class="bg-left" method="post" class="registration-form" name="login" ng-submit="loginuser(user)">
+    <strong><h5> Don't Have a Profile ? <a href="/"> Create Account</a></h5></strong>
+    <br>
+    <div class="form-group">
+        <input type="email" class="form-control" id="inputemail"  placeholder="Email Address" ng-model="user.email" name="email" required>
+        <p class="form-error" ng-show="login.email.$error.required && login.email.$touched">Enter your Email ID</p>                                    
     </div>
+  <div class="form-group">
+    <input type="password" class="form-control" id="inputpassword" placeholder="Password" ng-model="user.password" name="password" required>
+    <p class="form-error" ng-show="login.password.$error.required && login.password.$touched">Enter your Password</p>
+  </div>
+  <button type="submit" class="btn btn-primary">Login</button>
+</form> <!-- End Service #3 -->
+
+                </div> <!-- End Left Content Col 6 -->
+
+                <div class="col-md-6"> <!-- Right Content Col 6 -->
+                        <div class="media-body" style="padding-left: 20px;">
+                             <div class="media-left media-middle">
+                <h2 style="color:white; font-size: 60px; font-weight: 600;">IMT Dubai</h2>
+                <h4 style="color:white; font-size: 36px; font-weight: 600;">Application Form</h4>
+                <br>
+                <br>
+                <span style="color:white; font-size: 20px; ">The next application deadlines are:<br>
+                        <strong>Graduate:</strong>     April 25th, 2017.<br>
+                       <strong> Undergraduate: </strong>   May 25th, 2017.<br>
+                        <br>
+                        Apply now to secure your seat</span>   
+                            </div>
+                        </div> 
+
+            
+                </div><!-- end container -->
+    </div>
+        </div></div>

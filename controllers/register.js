@@ -12,7 +12,7 @@ exports.insertUser = function(req, res){
         programs: req.body.program,
         phonenumber: req.body.phone
     });
-   userdetails.find({emailId: req.body.emailId}, function(err,docs) { 
+   userdetails.find({emailId: req.body.email}, function(err,docs) { 
        if(err) throw err;
        if (docs[0] != null) {
            res.json({ success : false, msg :'Email ID already exists ', code : 0})
@@ -30,7 +30,7 @@ exports.insertUser = function(req, res){
 
 // user login 
 exports.loginUser = function(req,res) {
-    userdetails.findOne({emailId: req.body.emailId}, function(err, docs) {
+    userdetails.findOne({emailId: req.body.email}, function(err, docs) {
         if (err) throw err;
         else {
             if(docs != null) {
@@ -39,7 +39,7 @@ exports.loginUser = function(req,res) {
                     var token = docs.generateJwt();
                     res.json({ success : true, msg : 'User Logged in Successfully', code : 1, token : token})
                 } else {
-                    res.json({ success : false, msg : 'Password incorrect', code : 1})
+                    res.json({ success : false, msg : 'Password incorrect', code : 2})
                 }
             } else {
                 res.json({ success: false, msg : 'Emaild ID Incorrect', code : 0});
