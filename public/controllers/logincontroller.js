@@ -1,14 +1,16 @@
-app.controller('loginCtrl', function($scope, $location, customFactory, $localStorage){
-  console.log("login controller");
-  $scope.loginuser = function(data){
-  		customFactory.url = '/login';
-      customFactory.post(data).then(function(success){
-      console.log(success);
-      // $location.path('/adminpanel');
-    },
-      function(error){
-        console.log(error);
+app.controller('loginCtrl', function($scope, customFactory, $location) {
+  $scope.loginuser = function(user) {
+    console.log(user)
+    customFactory.url = '/login';
+    customFactory.post(user).then(function(success) {
+      console.log(success + 'success details');
+      console.log(success.data);
+      if(success.data.code == 1) {
+        swal('Logged in Successfully');
+        $location.path('/');
+      } else {
+        swal('Invalid Credentials');
       }
-    )
+    });
   }
 });

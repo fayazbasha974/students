@@ -31,7 +31,7 @@ exports.insertUser = function(req, res){
 
 // user login 
 exports.loginUser = function(req,res) {
-    userdetails.findOne({emailId: req.body.emailId}, function(err, docs) {
+    userdetails.findOne({emailId: req.body.email}, function(err, docs) {
         if (err) throw err;
         else {
             if(docs != null) {
@@ -41,7 +41,7 @@ exports.loginUser = function(req,res) {
                     req.session.name = req.body.emailId;
                     res.json({ success : true, msg : 'User Logged in Successfully', code : 1, token : token})
                 } else {
-                    res.json({ success : false, msg : 'Password incorrect', code : 1})
+                    res.json({ success : false, msg : 'Password incorrect', code : 2})
                 }
             } else {
                 res.json({ success: false, msg : 'Emaild ID Incorrect', code : 0});

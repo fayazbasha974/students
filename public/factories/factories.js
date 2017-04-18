@@ -2,7 +2,7 @@
 app.factory('customFactory',function($http,$q){
     var object = {};
     object.post = function(data){
-        console.log(object.url);
+        // console.log(object.url);
         var defered = $q.defer();
     $http({
         url : object.url,

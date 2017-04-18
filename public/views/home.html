@@ -6,38 +6,51 @@
             <div class="row"> <!-- row -->
                 
                 <div class="col-md-6 text-right">  <!-- Left Content Col 6 -->
-  <form class="bg-left" ng-submit="signupuser(user)">
-  <strong><h5> Create Profile, Already Registered ? <a href="#"> Login</a></h5></strong>
+  <form class="bg-left" ng-submit="signupuser(user)" name="registerform"> 
+  <strong><h5> Create Profile, Already Registered ? <a href="/login"> Login</a></h5></strong>
   <br>
    <div class="form-group">
-    <input type="firstname" class="form-control" id="inputfirstname" placeholder="First Name" ng-model="user.firstName">
+    <input type="firstname" name="firstname" class="form-control" id="inputfirstname" placeholder="First Name" ng-model="user.firstName" required>
+    <p class="form-error" ng-show="registerform.firstname.$touched && registerform.firstname.$invalid">Enter your firstname</p>
   </div>
    <div class="form-group">
-    <input type="lastname" class="form-control" id="inputlastname"  placeholder="Last Name" ng-model="user.lastName">
+    <input type="lastname" class="form-control" name="lastname" id="inputlastname"  placeholder="Last Name" ng-model="user.lastName" required>
+    <p class="form-error" ng-show="registerform.lastname.$touched && registerform.lastname.$invalid">Enter your lastname</p>
   </div>
   <div class="form-group">
-    <input type="email" class="form-control" id="inputemail"  placeholder="Email Address" ng-model="user.email">
+    <input type="email" name="email" class="form-control" id="inputemail"  placeholder="Email Address" ng-model="user.email" required>
+    <p class="form-error" ng-show="registerform.email.$error.required && registerform.email.$touched">Enter your Email ID</p>
+    <p class="form-error" ng-show="registerform.email.$error.email">Not a valid Email</p>
   </div>
   <div class="form-group">
-    <input type="password" class="form-control" id="inputpassword" placeholder="Password" ng-model="user.password">
+    <input type="password" class="form-control" name="password" minlength="8" id="inputpassword" placeholder="Password" ng-model="user.password" required>
+    <p class="form-error" ng-show="registerform.password.$error.required && registerform.password.$touched">Create Password</p>
+    <p class="form-error" ng-show="registerform.password.$error.minlength">Password should be atleast 8 characters</p>
   </div>
     <div class="form-group">
-    <input type="password" class="form-control" id="inputconfirmpassword" placeholder="Confirm Password" ng-model="user.confirmPassword">
+    <input type="password" name="confirmpassword" class="form-control" pattern="{{user.password}}" id="inputconfirmpassword" placeholder="Confirm Password" ng-model="user.confirmPassword" required>
+    <p class="form-error" ng-show="registerform.confirmpassword.$error.required && registerform.confirmpassword.$touched">Confirm password</p>
+    <p class="form-error" ng-show="registerform.confirmpassword.$error.pattern">Password do not match</p>
   </div>
       <div class="form-group">
-    <input type="country" class="form-control" id="inputcountry" placeholder="Country" ng-model="user.country">
+    <input type="country" class="form-control" name="country" id="inputcountry" placeholder="Country" ng-model="user.country" required>
+    <p class="form-error" ng-show="registerform.country.$error.required && registerform.country.$touched">Enter your Country</p>
+
   </div>
   <div class="form-group">
-    <select class="form-control" id="programs" ng-model="user.program">
+    <select class="form-control" id="programs" name="programs" ng-model="user.program" required>
    <option value="" selected="selected">Programs</option>
    <option value="EMBA">Executive MBA</option>
    <option value="MBS">Master of Business Statistics</option>
    <option value="MIM">Master of International Marketing</option>
    <option value="BSBA">Bachelor of Business Administration</option></select>
     </select>
+    <p class="form-error" ng-show="registerform.programs.$error.required && registerform.programs.$touched">Select any program</p>
   </div>
   <div class="form-group">
-    <input type="phone" class="form-control" id="inputphone" placeholder="Phone Number" ng-model="user.phone">
+    <input type="tel" name="phonenumber" class="form-control" id="inputphone" placeholder="Phone Number" ng-model="user.phone" required>
+    <p class="form-error" ng-show="registerform.phonenumber.$error.required && registerform.phonenumber.$touched">Enter your Mobile Number</p>
+    <p class="form-error" ng-show="registerform.phonenumber.$error.tel">Mobile Number should be like +91 9876543210</p>
   </div>
   <button type="submit" class="btn btn-primary">Submit</button>
 </form> <!-- End Service #3 -->
