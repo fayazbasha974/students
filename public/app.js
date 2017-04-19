@@ -9,9 +9,9 @@ app.config(function($routeProvider) {
         templateUrl : "views/login.html",
         controller : "loginCtrl"
     })
-    .when("/editprofile", {
-        templateUrl : "views/editprofile.html",
-        controller : "editprofileCtrl"
+    .when("/application", {
+        templateUrl : "views/application.html",
+        controller : "applicationCtrl"
     })
     .when("/profile", {
         templateUrl : "views/profile.html",
