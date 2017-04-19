@@ -48,7 +48,7 @@ a {
 a:hover,
 a:focus {
     text-decoration: none;
-    color: #333f74;
+    color: #ffcc33;
 }
 .pull-left {
     margin-top: 10px;
@@ -61,7 +61,7 @@ a:focus {
     margin: auto;
 }
 }
-.highlight { color: #333f74 }
+.highlight { color: #ffcc33 }
 .clearfix:after {
     visibility: hidden;
     display: block;
@@ -99,17 +99,17 @@ a:focus {
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
     color: #333;
-    border-bottom: 4px solid #333f74;
+    border-bottom: 4px solid #ffcc33;
 }
 .navbar-default .navbar-toggle { border-color: transparent }
 .navbar-default .navbar-toggle:hover,
 .navbar-default .navbar-toggle:focus { background-color: transparent }
 .navbar-default .navbar-toggle:hover>.navbar-default .navbar-toggle .icon-bar,
-.navbar-default .navbar-toggle:focus>.navbar-default .navbar-toggle .icon-bar { color: #333f74 }
+.navbar-default .navbar-toggle:focus>.navbar-default .navbar-toggle .icon-bar { color: #FFCC33 }
 /* Header Page */
 #tf-header {
     padding: 20px 0;
-    background: #333f74;
+    background: #ffcc33;
     margin-top: 70px;
     color: #ffffff;
 }
@@ -147,7 +147,7 @@ a:focus {
     padding: 20% 0;
     background-attachment: fixed;
 }
-#tf-home h1 { color: #333f74 }
+#tf-home h1 { color: #ffcc33 }
 .content-heading p.lead { margin-bottom: 80px }
 a.goto-btn {
     font-size: 18px;
@@ -158,7 +158,7 @@ a.goto-btn {
 }
 a.goto-btn:hover {
     color: #ffffff;
-    border-bottom: 2px solid #333f74;
+    border-bottom: 2px solid #ffcc33;
 }
 /* Home Section Style 2 - With Video*/
 #tf-home.video .overlay {
@@ -182,7 +182,7 @@ a.goto-btn:hover {
     margin-left: -30px;
     transition: all 0.3s;
 }
-.img-wrapper i.fa:hover { background: #333f74 }
+.img-wrapper i.fa:hover { background: #ffcc33 }
 
 #tf-home.app .overlay { padding: 10% 0 5% 0 }
 #tf-home.app {background: url(../img/bg/02.jpg);}
@@ -222,7 +222,7 @@ a.goto-btn { margin-right: 30px }
     text-align: center;
 }
 #tf-home.app .owl-theme .owl-controls .owl-page.active span,
-#tf-home.app .owl-theme .owl-controls.clickable .owl-page:hover span { border: 2px solid #333f74 }
+#tf-home.app .owl-theme .owl-controls.clickable .owl-page:hover span { border: 2px solid #FFCC33 }
 
 /* Home Parallax Effect */
 .bcg {
