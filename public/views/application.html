@@ -161,18 +161,18 @@
                                     <div class="checkbox">
                                         Visa Required &nbsp;
                                         <label class="form-check-label">
-                                            <input type="checkbox" class="form-check-input" id="inputvisayes"  ng-model="data.visa" name="visa">
+                                            <input type="radio" class="form-check-input" id="inputvisayes"  ng-model="data.visa" name="visa" value="required">
                                             Yes &nbsp;
                                         </label>
                                         <label class="form-check-label">
-                                            <input type="checkbox" class="form-check-input" id="inputvisano" ng-model="data.visa" name="visa">
+                                            <input type="radio" class="form-check-input" id="inputvisano" ng-model="data.visa" name="visa" value="notrequired">
                                             No &nbsp;
                                         </label>
                                     </div>
                                 </div>
                                 <div class="col-md-4" style="margin-top: 49px;"> 
                                     <div class="form-group">
-                                        <input type="text" class="form-control" ng-model="data.middlename" name="middlename" id="inpumiddlename" placeholder="Middle Name" required="required" text-only="text-only">
+                                        <input type="radio" class="form-control" ng-model="data.middlename" name="middlename" id="inpumiddlename" placeholder="Middle Name" required="required" text-only="text-only">
                                     </div>
                                     <div class="form-group">
                                         <input type="text" class="form-control" ng-model="data.nationality" name="nationality"  id="inputnationality"  placeholder="Nationality" required="required" text-only="text-only">
@@ -183,11 +183,11 @@
                                     <div class="checkbox">
                                     Transport Required &nbsp;
                                         <label class="form-check-label">
-                                            <input type="checkbox" class="form-check-input" id="inputtransyes" ng-model="data.transport" name="transport">
+                                            <input type="radio" class="form-check-input" id="inputtransyes" ng-model="data.transport" name="transport" value="required">
                                             Yes &nbsp;
                                         </label>
                                         <label class="form-check-label">
-                                            <input type="checkbox" class="form-check-input" id="inputtransno" ng-model="data.transport" name="transport">
+                                            <input type="radio" class="form-check-input" id="inputtransno" ng-model="data.transport" name="transport" value="notrequired">
                                         No &nbsp;
                                         </label>
                                     </div> 
