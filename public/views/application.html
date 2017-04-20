@@ -55,7 +55,7 @@
         <div id="tf-services">
         <div class="container">
     <div class="container">
-    <form role="form" method="post" class="application-form" name="application"  novalidate ng-submit="application(data)"> 
+    <form role="form" method="post" class="application-form" name="application"  novalidate> 
         <div class="stepwizard">
             <div class="stepwizard-row setup-panel">
                 <div class="stepwizard-step">
@@ -150,54 +150,54 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" class="form-control"  ng-model="data.fullname" name="fullname" id="inputfullname" placeholder="Full Name" required="required">
+                                        <input type="text" class="form-control"  ng-model="data.fullname" name="fullname" id="inputfullname" placeholder="Full Name" required="required" text-only="text-only">
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" class="form-control"  ng-model="data.dateofbirth" name="dateofbirth" id="inputdob"  placeholder="Date of Birth" required="required">
+                                        <input type="text" class="form-control"  ng-model="data.dateofbirth" name="dateofbirth" id="dateOfBirth"  placeholder="Date of Birth" required="required">
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" class="form-control"  ng-model="data.country" name="country" id="inputcountry"  placeholder="Country" required="required">
+                                        <input type="text" class="form-control"  ng-model="data.country" name="country" id="inputcountry"  placeholder="Country" required="required" text-only="text-only">
                                     </div>
                                     <div class="checkbox">
                                         Visa Required &nbsp;
                                         <label class="form-check-label">
-                                            <input type="checkbox" class="form-check-input" id="inputvisayes"  ng-model="data.visa" name="visa">
+                                            <input type="radio" class="form-check-input" id="inputvisayes"  ng-model="data.visa" name="visa" value="required">
                                             Yes &nbsp;
                                         </label>
                                         <label class="form-check-label">
-                                            <input type="checkbox" class="form-check-input" id="inputvisano" ng-model="data.visa" name="visa">
+                                            <input type="radio" class="form-check-input" id="inputvisano" ng-model="data.visa" name="visa" value="notrequired">
                                             No &nbsp;
                                         </label>
                                     </div>
                                 </div>
                                 <div class="col-md-4" style="margin-top: 49px;"> 
                                     <div class="form-group">
-                                        <input type="text" class="form-control" ng-model="data.middlename" name="middlename" id="inpumiddlename" placeholder="Middle Name" required="required">
+                                        <input type="radio" class="form-control" ng-model="data.middlename" name="middlename" id="inpumiddlename" placeholder="Middle Name" required="required" text-only="text-only">
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" class="form-control" ng-model="data.nationality" name="nationality"  id="inputnationality"  placeholder="Nationality" required="required">
+                                        <input type="text" class="form-control" ng-model="data.nationality" name="nationality"  id="inputnationality"  placeholder="Nationality" required="required" text-only="text-only">
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" class="form-control" ng-model="data.passport" name="passport"  id="inputpassport"  placeholder="Passport No" required="required"> 
+                                        <input type="text" class="form-control" ng-model="data.passport" name="passport"  id="inputpassport"  placeholder="Passport No" required="required"y> 
                                     </div>
                                     <div class="checkbox">
                                     Transport Required &nbsp;
                                         <label class="form-check-label">
-                                            <input type="checkbox" class="form-check-input" id="inputtransyes" ng-model="data.transport" name="transport">
+                                            <input type="radio" class="form-check-input" id="inputtransyes" ng-model="data.transport" name="transport" value="required">
                                             Yes &nbsp;
                                         </label>
                                         <label class="form-check-label">
-                                            <input type="checkbox" class="form-check-input" id="inputtransno" ng-model="data.transport" name="transport">
+                                            <input type="radio" class="form-check-input" id="inputtransno" ng-model="data.transport" name="transport" value="notrequired">
                                         No &nbsp;
                                         </label>
                                     </div> 
                                 </div>
                                 <div class="col-md-4" style="margin-top: 49px;"> 
                                     <div class="form-group">
-                                        <input type="text" class="form-control" id="inputlastname" placeholder="Last Name" required="required" ng-model="data.lastname" name="lastname">
+                                        <input type="text" class="form-control" id="inputlastname" placeholder="Last Name" required="required" ng-model="data.lastname" name="lastname"  text-only="text-only">
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" class="form-control" id="inputcob"  placeholder="Country of birth" required="required" ng-model="data.countryofbirth" name="countryofbirth">
+                                        <input type="text" class="form-control" id="inputcob"  placeholder="Country of birth" required="required" ng-model="data.countryofbirth" name="countryofbirth" text-only="text-only">
                                     </div>
                                     <div class="form-group">
                                         <input type="text" class="form-control" id="inputpassportvalid"  placeholder="Passport valid untill" required="required"  ng-model="data.passportvalidtill" name="passportvalidtill">
@@ -210,7 +210,7 @@
                                 </div>
                                 <div class="col-md-4" style="margin-top: 49px;"> 
                                     <div class="form-group">
-                                        <input type="text" class="form-control" id="inputpostalcode" placeholder="Postal Code" required="required" ng-model="data.postalcode" name="postalcode"> 
+                                        <input type="text" class="form-control" id="inputpostalcode" placeholder="Postal Code" required="required" ng-model="data.postalcode" name="postalcode"  numbers-only="numbers-onl"> 
                                         <button class="btn btn-success nextBtn btn-lg pull-right" type="submit">Next</button> 
                                     </div>
                                 </div>
@@ -331,7 +331,7 @@
                                 <li>I will adhere to the policies, rules and regulations of IMT Dubai.</li>
                             </ul>
                             <br><br>
-                            <button class="btn btn-success btn-lg pull-right" type="submit">Finish!</button>
+                            <button class="btn btn-success btn-lg pull-right" type="submit"  ng-click="applicationSubmit(data)">Finish!</button>
                         </div>
                         <div class="col-md-2"></div>
                     </div>
