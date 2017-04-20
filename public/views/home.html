@@ -6,23 +6,30 @@
             <div class="row"> <!-- row -->
                 
                 <div class="col-md-6 text-right">  <!-- Left Content Col 6 -->
-  <form class="bg-left" ng-submit="signupuser(user)">
+  <form class="bg-left" name="signupform" ng-submit="signupuser(user)">
   <strong><h5> Create Profile, Already Registered ? <a href="#"> Login</a></h5></strong>
   <br>
    <div class="form-group">
-    <input type="firstname" class="form-control" id="inputfirstname" placeholder="First Name" ng-model="user.firstName">
+    <input type="firstname" class="form-control" id="inputfirstname" name="firstname" placeholder="First Name" ng-model="user.firstName" required>
+    <p class="form-error" ng-show="signupform.firstname.$error.required && signupform.firstname.$touched">Enter your First Name</p>
   </div>
    <div class="form-group">
-    <input type="lastname" class="form-control" id="inputlastname"  placeholder="Last Name" ng-model="user.lastName">
+    <input type="lastname" class="form-control" id="inputlastname"  name="lastname" placeholder="Last Name" ng-model="user.lastName" required>
+    <p class="form-error" ng-show="signupform.lastname.$error.required && signupform.lastname.$touched">Enter your Last Name</p>
   </div>
   <div class="form-group">
-    <input type="email" class="form-control" id="inputemail"  placeholder="Email Address" ng-model="user.email">
+    <input type="email" class="form-control" id="inputemail" name="email" placeholder="Email Address" ng-model="user.email" required>
+    <p class="form-error" ng-show="signupform.email.$error.required && signupform.email.$touched">Enter your Email ID</p>
+    <p class="form-error" ng-show="signupform.email.$error.email">Not a Valid Email ID</p>
   </div>
   <div class="form-group">
-    <input type="password" class="form-control" id="inputpassword" placeholder="Password" ng-model="user.password">
+    <input type="password" class="form-control" id="inputpassword" minlength="8" name="password" placeholder="Password" ng-model="user.password" required>
+    <p class="form-error" ng-show="signupform.password.$error.required && signupform.password.$touched">Enter your Password</p>
+    <p class="form-error" ng-show="signupform.password.$error.minlength">Password must be atleast 8 Characters</p>
   </div>
     <div class="form-group">
-    <input type="password" class="form-control" id="inputconfirmpassword" placeholder="Confirm Password" ng-model="user.confirmPassword">
+    <input type="password" class="form-control" name="confirmpassword" id="inputconfirmpassword" placeholder="Confirm Password" ng-model="user.confirmPassword" ng-match="user.password" required>
+    <p class="form-error"  ng-show="signupform.confirmpassword.$error.match && signupform.confirmpassword.$touched">Password do not match</p>
   </div>
       <div class="form-group">
     <input type="country" class="form-control" id="inputcountry" placeholder="Country" ng-model="user.country">

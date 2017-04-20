@@ -51,21 +51,32 @@
 }
 </style>
 
-<div style="margin-top:100px;">
+<div>
+        <div id="tf-services">
+        <div class="container">
     <div class="container">
+    <form role="form" method="post" class="application-form" name="application"  novalidate ng-submit="application(data)"> 
         <div class="stepwizard">
             <div class="stepwizard-row setup-panel">
                 <div class="stepwizard-step">
                     <a href="#step-1" type="button" class="btn btn-primary btn-circle">1</a>
-                    <p>Step 1</p>
+                    <p>Intro</p>
                 </div>
                 <div class="stepwizard-step">
                     <a href="#step-2" type="button" class="btn btn-default btn-circle" disabled="disabled">2</a>
-                    <p>Step 2</p>
+                    <p>Personal</p>
                 </div>
                 <div class="stepwizard-step">
                     <a href="#step-3" type="button" class="btn btn-default btn-circle" disabled="disabled">3</a>
-                    <p>Step 3</p>
+                    <p>Program</p>
+                </div>
+                <div class="stepwizard-step">
+                    <a href="#step-4" type="button" class="btn btn-default btn-circle" disabled="disabled">4</a>
+                    <p>Education</p>
+                </div>
+                <div class="stepwizard-step">
+                    <a href="#step-5" type="button" class="btn btn-default btn-circle" disabled="disabled">5</a>
+                    <p>Submit</p>
                 </div>
             </div>
         </div>
@@ -73,43 +84,260 @@
             <div class="row setup-content" id="step-1">
                 <div class="col-xs-12">
                     <div class="col-md-12">
-                        <h3> Step 1</h3>
-                        <div class="form-group">
-                            <label class="control-label">First Name</label>
-                            <input  maxlength="100" type="text" required="required" class="form-control" placeholder="Enter First Name"  />
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label">Last Name</label>
-                            <input maxlength="100" type="text" required="required" class="form-control" placeholder="Enter Last Name" />
-                        </div>
-                        <button class="btn btn-primary nextBtn btn-lg pull-right" type="button" >Next</button>
+                        <h1>Introduction</h1>
+                        <div class="col-md-12" style="background: white; padding: 5%; ">
+                            <div class="col-md-8">
+                                <h2>Welcome to IMT Dubai !</h2>
+                                <br>
+                                <p>In the past 10 years, IMT Dubai has become a prominent institution in the UAE, one of the few locally and internationally accredited business school. The success of our 1000+ alumni is a testimonial of our achievements.</p>
+                                <br>
+                                <p>By choosing to study at IMT Dubai, you will enter into a state-of-the-art campus. On campus, you will also benefit from many activities, sports facilities and regular events to make your journey exciting.</p>
+                                <br>
+                                <p>In the coming years, we will pursue our development, with quality and relevance always in mind and to stand to our motto: “ Dubai experience, Global Impact”.</p>
+                                <br>
+                                <p>Join us !</p>
+                                <br>
+                                <div style="    float: left;">
+                                <p  style="color:#333f74;font-weight: 500;">Dr. Francois Therin</p>
+                                <p  style="color:#333f74; font-weight: 500;">Director, IMT Dubai</p>
+                                </div>  
+                                <div style='margin-left:60px;'>
+                                <img class="iconDetails" id="img-circle"  src="img/director.jpg">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <h2 style="font-size: 26px; ">Application Steps</h2>
+                                <br>
+                                <ul>
+                                <li>Application information</li>
+                                <li>Personal information</li>
+                                <li>Program details</li>
+                                <li>Education</li>
+                                <li>Submit application</li>
+                                </ul>
+                                <br>
+                            </div>
+                            <button class="btn btn-primary nextBtn btn-lg pull-right" type="button" >Next</button>
+                        </div>           
                     </div>
                 </div>
             </div>
             <div class="row setup-content" id="step-2">
                 <div class="col-xs-12">
                     <div class="col-md-12">
-                        <h3> Step 2</h3>
-                        <div class="form-group">
-                            <label class="control-label">Company Name</label>
-                            <input maxlength="200" type="text" required="required" class="form-control" placeholder="Enter Company Name" />
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label">Company Address</label>
-                            <input maxlength="200" type="text" required="required" class="form-control" placeholder="Enter Company Address"  />
-                        </div>
-                        <button class="btn btn-primary nextBtn btn-lg pull-right" type="button" >Next</button>
+                        <h1>Personal Details</h1>
+                        <div class="row" style="background: white; padding: 5%; " >
+                            <div class="col-md-4">  
+                                    <form >
+                                    <div class="row">
+                                        <div class="col-xs-6">
+                                            <div class="form-group">
+                                                <select class="form-control" id="idtitle" ng-model="data.title" name="title">
+                                                    <option value="" selected="selected">Title</option>
+                                                    <option value="mr">Mr</option>
+                                                    <option value="mrs">Mrs</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6">
+                                            <div class="form-group">
+                                                <select class="form-control" id="gender" ng-model="data.gender" name="gender">
+                                                    <option value="" selected="selected">Gender</option>
+                                                    <option value="male">Male</option>
+                                                    <option value="female">Female</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control"  ng-model="data.fullname" name="fullname" id="inputfullname" placeholder="Full Name" required="required">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control"  ng-model="data.dateofbirth" name="dateofbirth" id="inputdob"  placeholder="Date of Birth" required="required">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control"  ng-model="data.country" name="country" id="inputcountry"  placeholder="Country" required="required">
+                                    </div>
+                                    <div class="checkbox">
+                                        Visa Required &nbsp;
+                                        <label class="form-check-label">
+                                            <input type="checkbox" class="form-check-input" id="inputvisayes"  ng-model="data.visa" name="visa">
+                                            Yes &nbsp;
+                                        </label>
+                                        <label class="form-check-label">
+                                            <input type="checkbox" class="form-check-input" id="inputvisano" ng-model="data.visa" name="visa">
+                                            No &nbsp;
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-md-4" style="margin-top: 49px;"> 
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" ng-model="data.middlename" name="middlename" id="inpumiddlename" placeholder="Middle Name" required="required">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" ng-model="data.nationality" name="nationality"  id="inputnationality"  placeholder="Nationality" required="required">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" ng-model="data.passport" name="passport"  id="inputpassport"  placeholder="Passport No" required="required"> 
+                                    </div>
+                                    <div class="checkbox">
+                                    Transport Required &nbsp;
+                                        <label class="form-check-label">
+                                            <input type="checkbox" class="form-check-input" id="inputtransyes" ng-model="data.transport" name="transport">
+                                            Yes &nbsp;
+                                        </label>
+                                        <label class="form-check-label">
+                                            <input type="checkbox" class="form-check-input" id="inputtransno" ng-model="data.transport" name="transport">
+                                        No &nbsp;
+                                        </label>
+                                    </div> 
+                                </div>
+                                <div class="col-md-4" style="margin-top: 49px;"> 
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="inputlastname" placeholder="Last Name" required="required" ng-model="data.lastname" name="lastname">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="inputcob"  placeholder="Country of birth" required="required" ng-model="data.countryofbirth" name="countryofbirth">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="inputpassportvalid"  placeholder="Passport valid untill" required="required"  ng-model="data.passportvalidtill" name="passportvalidtill">
+                                    </div>
+                                </div>
+                                <div class="col-md-8" style="margin-top: 49px;"> 
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="inputaddress" placeholder="Address" required="required" ng-model="data.address" name="address">
+                                    </div>
+                                </div>
+                                <div class="col-md-4" style="margin-top: 49px;"> 
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="inputpostalcode" placeholder="Postal Code" required="required" ng-model="data.postalcode" name="postalcode"> 
+                                        <button class="btn btn-success nextBtn btn-lg pull-right" type="submit">Next</button> 
+                                    </div>
+                                </div>
+                            </div>                       
                     </div>
                 </div>
             </div>
             <div class="row setup-content" id="step-3">
                 <div class="col-xs-12">
                     <div class="col-md-12">
-                        <h3> Step 3</h3>
-                        <button class="btn btn-success btn-lg pull-right" type="submit">Finish!</button>
+                        <h1>Program Details</h1>
+                        <div class="row" style="background: white; padding: 5%; " >
+                            <div class="col-md-4">
+                                <h3 style="color: #333f74;">Select Program</h3>
+                                <div class="form-group" style="font-size: 20px; line-height: 35px;">
+                                    <input id='imputmba'  name='test' type='radio' checked  ng-model="data.program" name="program"/> MBA<br>
+                                    <input id='inputemba' name='test' type='radio' ng-model="data.program" name="program" /> Executive MBA<br>
+                                    <input id='inputbsba'  name='test' type='radio' ng-model="data.program" name="program" /> BSBA<br>
+                                    <input id='inputwbsba'  name='test' type='radio'  ng-model="data.program" name="program"/> Weekend BSBA<br>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <h3 style="color: #333f74;">Select Term</h3>
+                                <div class="form-group" style="font-size: 20px; line-height: 35px;">
+                                    <input id='imputmba' name='test' type='radio' checked  ng-model="data.term" name="term"/> March<br>
+                                    <input id='inputemba' name='test' type='radio'  ng-model="data.term" name="term"/> September<br>
+                                    <input id='inputbsba' name='test' type='radio'  ng-model="data.term" name="term"/> December<br>
+                                </div>
+                                <button class="btn btn-success nextBtn btn-lg pull-right" type="submit">Next</button> 
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
+            <div class="row setup-content" id="step-4">
+                <div class="col-xs-12">
+                        <h1>Education Details</h1>
+                        <div class="row" style="background: white; padding: 5%; " >
+                            <div class="col-md-4">  
+                                <h3 style="color: #333f74;">Add a Degree</h3>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="inputdegree" placeholder="Name of the Degree" required="required"  ng-model="data.degree" name="degree">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="inputuni"  placeholder="University/School Name" required="required"  ng-model="data.university" name="university">
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-6">
+                                        <div class="form-group">
+                                        <input type="text" class="form-control" id="inputstartdate"  placeholder="Start Date" required="required" ng-model="data.startdate" name="startdate">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-6">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="inputenddate"  placeholder="End Date" required="required" ng-model="data.enddate" name="enddate">
+                                    </div>
+                                </div>
+                                <input type="file" class="form-control" id="inputdegree" >
+                                <button class="addeg" >Add Degree</button> <span>Cancel</span>
+                            </div>
+                            <div class="col-md-4"> 
+                                <h3 style="color: #333f74;">English Proficiency Test Score</h3>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="inputuni"  placeholder="Test Name" required="required"  ng-model="data.englishtestname" name="englishtestname">
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-6">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" id="inputtestdate"  placeholder="Test Date" required="required"  ng-model="data.englishtestdate" name="englishtestdate">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-6">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="inputscore"  placeholder="Score" required="required"  ng-model="data.englishtestscore" name="englishtestscore">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <input type="file" class="form-control" id="inputtestscore" ng-model="data.englishtestfile" name="englishtestfile">
+                                </div> 
+                            </div>
+                                         
+                            <div class="col-md-4"> 
+                                <h3 style="color: #333f74;">Having any Disability?</h3>
+                                <div class="checkbox">
+                                    <label class="form-check-label">
+                                        <input type="checkbox" class="form-check-input" id="inputdisablyes" ng-model="data.havinganydisability" name="havinganydisability">
+                                        Yes &nbsp;
+                                    </label>
+                                    <label class="form-check-label">
+                                        <input type="checkbox" class="form-check-input" id="inputdisablno" ng-model="data.havinganydisability" name="havinganydisability">
+                                        No &nbsp;
+                                    </label>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="inputlastname" placeholder="If yes provide details" ng-model="data.disabilitiestext" name="disabilitiestext">
+                                </div>
+                                <button class="btn btn-success nextBtn btn-lg pull-right" type="submit">Next</button>
+                            </div>
+                        </div>
+                </div>                   
+            </div>
         </form>
-    </div>
+        </div>
+        </div>
+            <div class="row setup-content" id="step-5">
+                <div class="col-xs-12">
+                    <h1>Terms & Conditions</h1>
+                    <div class="col-md-12" style="background: white; padding: 5%; ">
+                        <div class="col-md-2"></div>
+                        <div class="col-md-8">
+                            <ul>
+                                <li>I declare that the information provided on this form is true and complete in every detail.</li>
+                                <li>I understand that my application will only be assessed when it is complete in every detail and includes all required documentation as stated on this application form.</li>
+                                <li>I am aware of the conditions relating to my application and admissions and agree to pay all fees for which I am liable.</li>
+                                <li>I understand that my application will only be assessed when it is complete in every detail and includes all required documentation as stated on this application form.</li>
+                                <li>I will adhere to the policies, rules and regulations of IMT Dubai.</li>
+                            </ul>
+                            <br><br>
+                            <button class="btn btn-success btn-lg pull-right" type="submit">Finish!</button>
+                        </div>
+                        <div class="col-md-2"></div>
+                    </div>
+                    
+                </div>
+            </div>
+        </form>
+    </div></div></div>
 </div>
