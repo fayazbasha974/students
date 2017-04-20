@@ -1,7 +1,9 @@
 app.controller('applicationCtrl', function($scope, $location, $http){
   console.log("edit profile controller");
+  $scope.data = {};
   $(document).ready(function () {
-
+    $('#dateOfBirth').datepicker();
+    $('#inputpassportvalid').datepicker();
     var navListItems = $('div.setup-panel div a'),
             allWells = $('.setup-content'),
             allNextBtn = $('.nextBtn');
@@ -43,4 +45,18 @@ app.controller('applicationCtrl', function($scope, $location, $http){
 
     $('div.setup-panel div a.btn-primary').trigger('click');
   });
+  $scope.$watch('data', function(){
+    if($scope.data.title == 'mr'){
+        $scope.data.gender = 'male';
+    }
+    else if($scope.data.title == 'mrs'){
+        $scope.data.gender = 'female';
+    }
+    else{
+         $scope.data.gender = '';
+    }
+  }, true);
+  $scope.applicationSubmit = function(data){
+    console.log(data);
+  }
 });
