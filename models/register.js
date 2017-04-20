@@ -29,7 +29,8 @@ var newuser = mongoose.Schema({
   hash : String,
   salt : String,
   addressForCorrespondence : Address,
-  permanentAddress : Address
+  permanentAddress : Address,
+  otp : Number
 });
 
 newuser.methods.setPassword = function(password) {
