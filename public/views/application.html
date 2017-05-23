@@ -171,9 +171,9 @@
                                     </div>
                                 </div>
                                 <div class="col-md-4" style="margin-top: 49px;"> 
-                                    <!--<div class="form-group">
-                                        <input type="radio" class="form-control" ng-model="data.middlename" name="middlename" id="inpumiddlename" placeholder="Middle Name" required="required" text-only="text-only">
-                                    </div>-->
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" ng-model="data.middlename" name="middlename" id="inpumiddlename" placeholder="Middle Name" required="required" text-only="text-only">
+                                    </div>
                                     <div class="form-group">
                                         <input type="text" class="form-control" ng-model="data.nationality" name="nationality"  id="inputnationality"  placeholder="Nationality" required="required" text-only="text-only">
                                     </div>
@@ -203,15 +203,19 @@
                                         <input type="text" class="form-control" id="inputpassportvalid"  placeholder="Passport valid untill" required="required"  ng-model="data.passportvalidtill" name="passportvalidtill">
                                     </div>
                                 </div>
-                                <div class="col-md-8" style="margin-top: 49px;"> 
+                                <div class="col-md-8"> 
                                     <div class="form-group">
                                         <input type="text" class="form-control" id="inputaddress" placeholder="Address" required="required" ng-model="data.address" name="address">
                                     </div>
                                 </div>
-                                <div class="col-md-4" style="margin-top: 49px;"> 
+                                <div class="col-md-4"> 
                                     <div class="form-group">
-                                        <input type="text" class="form-control" id="inputpostalcode" placeholder="Postal Code" required="required" ng-model="data.postalcode" name="postalcode"  numbers-only="numbers-onl"> 
-                                        <button class="btn btn-success nextBtn btn-lg pull-right" type="submit">Next</button> 
+                                        <input type="text" class="form-control" id="inputpostalcode" placeholder="Postal Code" required="required" ng-model="data.postalcode" name="postalcode"  numbers-only="numbers-onl">
+                                    </div>
+                                </div>
+                                    <div > 
+                                    <div class="form-group"> 
+                                        <button class="btn btn-primary nextBtn btn-lg pull-right" type="button" >Next</button>
                                     </div>
                                 </div>
                             </div>                       
@@ -223,24 +227,26 @@
                     <div class="col-md-12">
                         <h1>Program Details</h1>
                         <div class="row" style="background: white; padding: 5%; " >
-                            <div class="col-md-4">
+                            <div class="col-md-6">
                                 <h3 style="color: #333f74;">Select Program</h3>
                                 <div class="form-group" style="font-size: 20px; line-height: 35px;">
                                     <input id='imputmba'  name='test' type='radio' checked  ng-model="data.program" name="program"/> MBA<br>
                                     <input id='inputemba' name='test' type='radio' ng-model="data.program" name="program" /> Executive MBA<br>
                                     <input id='inputbsba'  name='test' type='radio' ng-model="data.program" name="program" /> BSBA<br>
                                     <input id='inputwbsba'  name='test' type='radio'  ng-model="data.program" name="program"/> Weekend BSBA<br>
+                                    <input id='inputwbsba'  name='test' type='radio'  ng-model="data.program" name="program"/> MS - SCLM<br>
                                 </div>
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-md-6">
                                 <h3 style="color: #333f74;">Select Term</h3>
                                 <div class="form-group" style="font-size: 20px; line-height: 35px;">
                                     <input id='imputmba' name='test' type='radio' checked  ng-model="data.term" name="term"/> March<br>
                                     <input id='inputemba' name='test' type='radio'  ng-model="data.term" name="term"/> September<br>
                                     <input id='inputbsba' name='test' type='radio'  ng-model="data.term" name="term"/> December<br>
                                 </div>
-                                <button class="btn btn-success nextBtn btn-lg pull-right" type="submit">Next</button> 
+                                
                             </div>
+                            <button class="btn btn-success nextBtn btn-lg pull-right" type="submit">Next</button> 
                         </div>
                     </div>
                 </div>
@@ -263,14 +269,14 @@
                                         <input type="text" class="form-control" id="inputstartdate"  placeholder="Start Date" required="required" ng-model="data.startdate" name="startdate">
                                         </div>
                                     </div>
-                                </div>
+                                
                                 <div class="col-xs-6">
                                     <div class="form-group">
                                         <input type="text" class="form-control" id="inputenddate"  placeholder="End Date" required="required" ng-model="data.enddate" name="enddate">
                                     </div>
                                 </div>
+                                </div>
                                 <input type="file" class="form-control" id="inputdegree" >
-                                <button class="addeg" >Add Degree</button> <span>Cancel</span>
                             </div>
                             <div class="col-md-4"> 
                                 <h3 style="color: #333f74;">English Proficiency Test Score</h3>
@@ -283,11 +289,12 @@
                                             <input type="text" class="form-control" id="inputtestdate"  placeholder="Test Date" required="required"  ng-model="data.englishtestdate" name="englishtestdate">
                                         </div>
                                     </div>
-                                </div>
+                                
                                 <div class="col-xs-6">
                                     <div class="form-group">
                                         <input type="text" class="form-control" id="inputscore"  placeholder="Score" required="required"  ng-model="data.englishtestscore" name="englishtestscore">
                                     </div>
+                                </div>
                                 </div>
                                 <div class="form-group">
                                     <input type="file" class="form-control" id="inputtestscore" ng-model="data.englishtestfile" name="englishtestfile">
