@@ -82,7 +82,7 @@ exports.loginUser = function(req,res) {
                 var hash = docs.validPassword(req.body.password);
                 if(hash == true) {
                     var token = docs.generateJwt();
-                    res.json({ success : true, msg : 'User Logged in Successfully', code : 1, token : token})
+                    res.json({ success : true, msg : 'User Logged in Successfully', code : 1, token : token,data : docs})
                 } else {
                     res.json({ success : false, msg : 'Password incorrect', code : 2})
                 }

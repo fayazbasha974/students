@@ -61,6 +61,7 @@ app.controller('applicationCtrl', function($scope, $location, $http, customFacto
     customFactory.url = 'http://localhost:3000/submitApplication';
     customFactory.post(data).then(function(success){
         console.log(success);
+        swal("application submitted succesfully");
     },
         function(error){
             console.log(error);

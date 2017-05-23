@@ -17,6 +17,20 @@ app.factory('customFactory',function($http,$q){
     )
     return defered.promise;
     }
+    object.get = function(){
+        var defered = $q.defer();
+        $http({
+            url : object.url,
+            method : 'GET'
+        }).then(function(success){
+            defered.resolve(success);
+        },
+            function(error){
+                defered.reject(error);
+            }
+        )
+        return defered.promise;
+    }
     return object;
 })
 // factory for login api only
