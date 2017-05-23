@@ -33,6 +33,34 @@ var newuser = mongoose.Schema({
   otp : Number
 });
 
+var application = mongoose.Schema({
+  title:  String,
+  firstname: String,
+  middlename: String,
+  lastname: String,
+  dob: String,
+  gender: String,
+  nationality: String,
+  countryOfBirth: String,
+  countryOfResidence: String,
+  programOfInterest: String,
+  preferredStartDate: String,
+  emailId: String,
+  password: String,
+  programs: String,
+  phonenumber: String,
+  passportNumber : String,
+  passportValidUntil : Date,
+  visaRequired : String,
+  transportationRequired : String,
+  accommodationRequired : String,
+  hash : String,
+  salt : String,
+  addressForCorrespondence : Address,
+  permanentAddress : Address,
+  otp : Number
+});
+
 newuser.methods.setPassword = function(password) {
   this.salt = crypto.randomBytes(16).toString('hex');
   this.hash = crypto.pbkdf2Sync(password, this.salt, 1000, 64).toString('hex');
@@ -56,4 +84,6 @@ newuser.methods.generateJwt = function() {
 }
 
 var registerschema = mongoose.model("apps",newuser);
-module.exports = registerschema;
+var applicationSchema = mongoose.model("applications",application);
+
+module.exports = {registerschema, applicationSchema};

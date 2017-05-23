@@ -9,7 +9,8 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/', function(req, res, next){
-    res.json(req.body);
+    // res.json(req.body);
+    controller.insertApplication(req,res);
 })
 
 module.exports = router;
