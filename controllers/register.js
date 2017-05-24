@@ -1,5 +1,6 @@
 var bodyParser = require('body-parser');
-var userdetails = require('../models/register');
+var userdetails = require('../models/register').registerschema;
+var applications = require('../models/register').applicationSchema;
 var nodemailer = require('nodemailer');
 var xoauth2 = require('xoauth2');
 
@@ -20,6 +21,50 @@ exports.insertUser = function(req, res){
        else {
            user.setPassword(req.body.password);
            user.save(function(err,data) {
+               if(err) throw err;
+               res.json({ success : true, msg : 'User Registered Successfully', code : 1});
+           });
+       }
+    });
+    
+}
+
+exports.insertApplication = function(req, res){
+    var application = new applications({
+        title : req.body.title,
+        firstname: req.body.fullname,
+        middlename: req.body.title,
+        lastname: req.body.lastname,
+        dob: req.body.dateofbirth,
+        gender: req.body.gender,
+        nationality: req.body.nationality,
+        countryOfBirth: req.body.countryofbirth,
+        countryOfResidence: req.body.country,
+        programOfInterest: req.body.title,
+        preferredStartDate: req.body.title,
+        emailId: req.body.title,
+        password: req.body.title,
+        programs: req.body.title,
+        phonenumber: req.body.title,
+        passportNumber : req.body.passport,
+        passportValidUntil : req.body.passportvalidtill,
+        visaRequired : req.body.visa,
+        transportationRequired : req.body.transport,
+        accommodationRequired : req.body.title,
+        hash : req.body.title,
+        salt : req.body.title,
+        addressForCorrespondence : req.body.address,
+        permanentAddress : req.body.title,
+        otp : req.body.title
+    });
+   applications.find({emailId: req.body.email}, function(err,docs) { 
+       if(err) throw err;
+       if (docs[0] != null) {
+           res.json({ success : false, msg :'Email ID already exists ', code : 0})
+       }
+       else {
+        //    user.setPassword(req.body.password);
+           application.save(function(err,data) {
                if(err) throw err;
                res.json({ success : true, msg : 'User Registered Successfully', code : 1});
            });
