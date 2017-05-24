@@ -6,6 +6,7 @@ app.controller('homeCtrl', function($scope, $location,customFactory){
       console.log(success);
       if(success.data.code == 1){
         swal (" registered succesfully ");
+        $location.path('login')
       } else if(success.data.code == 0) {
         swal ("email id already exists");
       }

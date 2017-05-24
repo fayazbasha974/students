@@ -1,4 +1,4 @@
-app.controller('applicationCtrl', function($scope, $location, $http){
+app.controller('applicationCtrl', function($scope, $location, $http, customFactory){
   console.log("edit profile controller");
   $scope.data = {};
   $(document).ready(function () {
@@ -58,5 +58,13 @@ app.controller('applicationCtrl', function($scope, $location, $http){
   }, true);
   $scope.applicationSubmit = function(data){
     console.log(data);
+    customFactory.url = 'http://localhost:3000/submitApplication';
+    customFactory.post(data).then(function(success){
+        console.log(success);
+    },
+        function(error){
+            console.log(error);
+        }
+    )
   }
 });
