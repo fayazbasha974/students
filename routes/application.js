@@ -4,8 +4,7 @@ var controller = require('../controllers/register');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  // res.render('index', { title: 'Express' });
-  res.json("hai")
+  controller.fetchApplications(req, res);
 });
 
 router.post('/', function(req, res, next){

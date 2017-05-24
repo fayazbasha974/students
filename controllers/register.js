@@ -72,6 +72,16 @@ exports.insertApplication = function(req, res){
     });
     
 }
+//fetch all applications
+exports.fetchApplications = function(req, res){
+    applications.find({}, function(err, docs){
+        if(err) throw err;
+        else if(docs.length){
+            res.json(docs);
+        }
+    })
+}
+
 
 // user login 
 exports.loginUser = function(req,res) {

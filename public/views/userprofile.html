@@ -4,14 +4,18 @@
 			<tr>
 				<th>Firstname</th>
 				<th>Lastname</th>
-				<th>Email</th>
+				<th>passportNumber</th>
+				<th>Date of Birth</th>
+				<th>Country of Birth</th>
 			</tr>
 			</thead>
 			<tbody>
-			<tr>
-				<td>John</td>
-				<td>Doe</td>
-				<td>john@example.com</td>
+			<tr ng-repeat="application in applications">
+				<td>{{application.firstname}}</td>
+				<td>{{application.lastname}}</td>
+				<td>{{application.passportNumber}}</td>
+				<td>{{application.dob}}</td>
+				<td>{{application.countryOfBirth}}</td>
 			</tr>
 			</tbody>
 		</table>
