@@ -1,2 +1,13 @@
 .form-error { color: red;}
 .stepwizard-step p {color:white;}
+.sweet-alert h2 {
+    color: #575757;
+    font-size: 20px !important;
+    margin: 8px 0 !important;
+    line-height: 34px !important;
+    font-family: lato !important;
+}
+
+.sweet-alert button{padding: 8px 32px;}
+.navbar-nav > li > a {    font-family: lato !important;
+font-weight: 500 !important;}

@@ -65,12 +65,10 @@ textarea.form-control::-webkit-input-placeholder {
 
 .sweet-alert button, button.btn {
 height: 30px;
-    margin: 0;
     padding: 0 45px;
     vertical-align: middle;
     background: #333f74 !important;
     border: 0;
-position: sticky;
     font-size: 16px;
     font-weight: 300;
     line-height: 18px;
