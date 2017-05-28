@@ -38,27 +38,24 @@ var application = mongoose.Schema({
   firstname: String,
   middlename: String,
   lastname: String,
-  dob: String,
+  dob: Date,
   gender: String,
   nationality: String,
   countryOfBirth: String,
   countryOfResidence: String,
   programOfInterest: String,
   preferredStartDate: String,
-  emailId: String,
-  password: String,
   programs: String,
   phonenumber: String,
   passportNumber : String,
   passportValidUntil : Date,
-  visaRequired : String,
-  transportationRequired : String,
-  accommodationRequired : String,
+  visaRequired : Boolean,
+  transportationRequired : Boolean,
+  accommodationRequired : Boolean,
   hash : String,
   salt : String,
   addressForCorrespondence : Address,
-  permanentAddress : Address,
-  otp : Number
+  permanentAddress : Address
 });
 
 newuser.methods.setPassword = function(password) {

@@ -57,7 +57,11 @@ exports.insertApplication = function(req, res){
         permanentAddress : req.body.title,
         otp : req.body.title
     });
-   applications.find({emailId: req.body.email}, function(err,docs) { 
+    application.save(function(err,data) {
+       if(err) throw err;
+       res.json({ success : true, msg : 'application Registered Successfully', code : 1});
+    });
+   /*applications.find({emailId: req.body.email}, function(err,docs) { 
        if(err) throw err;
        if (docs[0] != null) {
            res.json({ success : false, msg :'Email ID already exists ', code : 0})
@@ -69,7 +73,7 @@ exports.insertApplication = function(req, res){
                res.json({ success : true, msg : 'User Registered Successfully', code : 1});
            });
        }
-    });
+    });*/
     
 }
 //fetch all applications

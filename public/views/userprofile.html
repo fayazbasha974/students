@@ -1,4 +1,45 @@
 <div style="margin-top:100px; margin-left:50px;">
+	<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+	      <div class="modal-content">
+	        <div class="modal-header">
+	          <button type="button" class="close" data-dismiss="modal">&times;</button>
+	          <h4 class="modal-title">Application</h4>
+	        </div>
+	        <div class="modal-body">
+	          	<table class="table">
+					<thead></thead>
+					<tbody>
+						<tr>
+							<td>Firstname</td><td>{{currentApplication.firstname}}</td>
+						</tr>
+						<tr>
+							<td>Lastname</td><td>{{currentApplication.lastname}}</td>
+						</tr>
+						<tr>
+							<td>passportNumber</td><td>{{currentApplication.passportNumber}}</td>
+						</tr>
+						<tr>
+							<td>Date of Birth</td><td>{{currentApplication.dob}}</td>
+						</tr>
+						<tr>
+							<td>Country of Birth</td><td>{{currentApplication.countryOfBirth}}</td>
+						</tr>
+						<tr>
+							<td></td><td><button class=" btn-success">Accept</button><button class=" btn-danger"> Reject</button></td>
+						</tr>
+					</tbody>
+				</table>
+	        </div>
+	        <div class="modal-footer">
+	          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	        </div>
+      </div>
+	      
+	    </div>
+    </div>
 	  <table class="table">
 			<thead>
 			<tr>
@@ -7,15 +48,17 @@
 				<th>passportNumber</th>
 				<th>Date of Birth</th>
 				<th>Country of Birth</th>
+				<th>Action</th>
 			</tr>
 			</thead>
 			<tbody>
-			<tr ng-repeat="application in applications">
+			<tr ng-repeat="application in applications" ng-click="viewApplication(application)" style="cursor:pointer;"  data-toggle="modal" data-target="#myModal">
 				<td>{{application.firstname}}</td>
 				<td>{{application.lastname}}</td>
 				<td>{{application.passportNumber}}</td>
 				<td>{{application.dob}}</td>
 				<td>{{application.countryOfBirth}}</td>
+				<td><button class="btn btn-primary">View</button></td>
 			</tr>
 			</tbody>
 		</table>

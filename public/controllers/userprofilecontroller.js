@@ -9,4 +9,7 @@ app.controller('userprofilecontroller', function($scope,$localStorage,$http, cus
                   console.log(error);
             }
       )
+      $scope.viewApplication = function(data){
+            $scope.currentApplication = data;
+      }
 });
