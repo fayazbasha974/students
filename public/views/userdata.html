@@ -1,0 +1,52 @@
+<div style="margin-top:100px; margin-left:50px;">
+   <table class="table">
+					<thead></thead>
+					<tbody>
+						<tr>
+							<td>Firstname</td><td>{{data.firstname}}</td>
+						</tr>
+						<tr>
+							<td>Lastname</td><td>{{data.lastname}}</td>
+						</tr>
+						<tr>
+							<td>passportNumber</td><td>{{data.passportNumber}}</td>
+						</tr>
+						<tr>
+							<td>Date of Birth</td><td>{{data.dob | date: 'dd/MM/yyyy'}}</td>
+						</tr>
+						<tr>
+							<td>Country of Birth</td><td>{{data.countryOfBirth}}</td>
+						</tr>
+						<tr>
+							<td>Accomadation required</td><td>{{data.accommodationRequired}}</td>
+						</tr>
+						<tr>
+							<td>Country of Birth</td><td>{{data.countryOfBirth}}</td>
+						</tr>
+						<tr>
+							<td>Gender</td><td>{{data.gender}}</td>
+						</tr>
+						<tr>
+							<td>Nationality</td><td>{{data.nationality}}</td>
+						</tr>
+						<tr>
+							<td>Passport Validity</td><td>{{data.passportValidUntil | date: 'dd/MM/yyyy'}}</td>
+						</tr>
+						<tr>
+							<td>Phone Number</td><td>{{data.phonenumber}}</td>
+						</tr>
+						<tr>
+							<td>Preferred start Date</td><td>{{data.preferredStartDate}}</td>
+						</tr>
+						<tr>
+							<td>Program Of Interest</td><td>{{data.programOfInterest}}</td>
+						</tr>
+						<tr>
+							<td>Transportation required</td><td>{{data.transportationRequired}}</td>
+						</tr>
+						<tr>
+							<td>Visa required</td><td>{{data.visaRequired}}</td>
+						</tr>
+					</tbody>
+				</table>
+</div>

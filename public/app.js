@@ -21,6 +21,10 @@ app.config(function($routeProvider) {
         templateUrl : "views/userprofile.html",
         controller : "userprofilecontroller"
     })
+    .when("/userdetails",{
+        templateUrl : "views/userdata.html",
+        controller : "userdatacontroller"
+    })
 }).directive('textOnly', function(){
    return {
      require: 'ngModel',

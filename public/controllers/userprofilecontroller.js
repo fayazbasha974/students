@@ -1,4 +1,4 @@
-app.controller('userprofilecontroller', function($scope,$localStorage,$http, customFactory){
+app.controller('userprofilecontroller', function($scope,$localStorage,$http, customFactory,$location){
       console.log("user profile controller");
       customFactory.url = "http://localhost:3000/submitApplication";
       customFactory.get().then(function(success){
@@ -9,7 +9,10 @@ app.controller('userprofilecontroller', function($scope,$localStorage,$http, cus
                   console.log(error);
             }
       )
-      $scope.viewApplication = function(data){
-            $scope.currentApplication = data;
+      $scope.viewUserData = function(data){
+           // console.log(data);
+            $localStorage.currentApplication = data;
+          //  console.log( $rootScope.currentApplication);
+             $location.path('/userdetails');
       }
 });

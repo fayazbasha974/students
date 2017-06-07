@@ -79,13 +79,13 @@
 			</tr>
 			</thead>
 			<tbody>
-			<tr ng-repeat="application in applications" ng-click="viewApplication(application)" style="cursor:pointer;"  data-toggle="modal" data-target="#myModal">
+			<tr ng-repeat="application in applications" >
 				<td>{{application.firstname}}</td>
 				<td>{{application.lastname}}</td>
 				<td>{{application.passportNumber}}</td>
 				<td>{{application.dob}}</td>
 				<td>{{application.countryOfBirth}}</td>
-				<td><button class="btn btn-primary">View</button></td>
+				<td><button class="btn btn-primary" ng-click="viewUserData(application)">View</button></td>
 			</tr>
 			</tbody>
 		</table>
