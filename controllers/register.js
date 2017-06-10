@@ -55,8 +55,11 @@ exports.insertApplication = function(req, res){
         salt : req.body.title,
         addressForCorrespondence : req.body.address,
         permanentAddress : req.body.title,
-        otp : req.body.title
+        otp : req.body.title,
+        edImage : req.body.edImage,
+        engProfImage : req.body.engProfImage
     });
+    console.log(req.body.engProfImage);
     application.save(function(err,data) {
        if(err) throw err;
        res.json({ success : true, msg : 'application Registered Successfully', code : 1});

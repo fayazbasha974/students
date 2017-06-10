@@ -56,6 +56,42 @@ app.controller('applicationCtrl', function($scope, $location, $http, customFacto
          $scope.data.gender = '';
     }
   }, true);
+  $scope.setFile = function(element) {
+    console.log(element.files.length);
+    for(var i=0; i<element.files.length; i++){
+    $scope.currentFile = element.files[i];
+     var reader = new FileReader();
+        reader.onload = function(event) {
+            $scope.data.edImage = event.target.result; 
+            //   console.log($scope.data.edImage);
+            // $scope.images.push(angular.copy(event.target.result));
+            // console.log($scope.images);
+            $scope.$apply()
+
+            }
+        // console.log($scope.edDetails);
+        // when the file is read it triggers the onload event above.
+        reader.readAsDataURL(element.files[i]);
+        }
+    }
+          $scope.getFile = function(element) {
+        console.log(element.files.length);
+        for(var i=0; i<element.files.length; i++){
+        $scope.currentFile = element.files[i];
+        var reader = new FileReader();
+        reader.onload = function(event) {
+            $scope.data.engProfImage = event.target.result; 
+           //   console.log($scope.data.edImage);
+            // $scope.images.push(angular.copy(event.target.result));
+            // console.log($scope.images);
+            $scope.$apply()
+
+        }
+        // console.log($scope.edDetails);
+        // when the file is read it triggers the onload event above.
+        reader.readAsDataURL(element.files[i]);
+        }
+    }
   $scope.applicationSubmit = function(data){
     console.log(data);
     customFactory.url = 'http://localhost:3000/submitApplication';

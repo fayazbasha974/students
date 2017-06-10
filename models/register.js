@@ -55,7 +55,9 @@ var application = mongoose.Schema({
   hash : String,
   salt : String,
   addressForCorrespondence : Address,
-  permanentAddress : Address
+  permanentAddress : Address,
+  edImage:String,
+  engProfImage:String
 });
 
 newuser.methods.setPassword = function(password) {

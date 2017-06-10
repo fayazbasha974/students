@@ -2,6 +2,7 @@
    <table class="table">
 					<thead></thead>
 					<tbody>
+						
 						<tr>
 							<td>Firstname</td><td>{{data.firstname}}</td>
 						</tr>
@@ -47,6 +48,13 @@
 						<tr>
 							<td>Visa required</td><td>{{data.visaRequired}}</td>
 						</tr>
+						<!--<tr>
+							<td>Education certificate</td><td><img src="{{data.edImage}}" height="100" width="100"></td>
+						</tr>
+						<tr>
+							<td>English proficiency certificate</td><td><img src="{{data.engProfImage}}" height="100" width="100"></td>
+						</tr>-->
 					</tbody>
 				</table>
+                <button id="backbutton" class="primary" ng-click="goBack()">Go Back</button>
 </div>

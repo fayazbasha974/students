@@ -324,3 +324,6 @@ a.goto-btn { margin-right: 30px }
     left: 0;
     right: 0;
 }
+button#backbutton{
+	margin-bottom: 5%;
+}
