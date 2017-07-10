@@ -34,8 +34,9 @@ app.factory('customFactory',function($http,$q){
     return object;
 })
 // factory for login api only
-.factory('login',function($http,$q){
+.factory('login',function($http,$q,$window){
     var object = {};
+    var userInfo;
     object.login = function(data){
         var defered = $q.defer();
     $http({
@@ -44,6 +45,10 @@ app.factory('customFactory',function($http,$q){
         data : data
     }).then(function(success){
         defered.resolve(success);
+        userInfo = {
+           accessToken: success.data.token
+        };
+        $window.sessionStorage["userInfo"] = JSON.stringify(userInfo);
         // console.log(success);
     },
         function(error){
@@ -53,5 +58,15 @@ app.factory('customFactory',function($http,$q){
     )
     return defered.promise;
     }
+    object.getUserInfo = function() {
+      return userInfo;
+    }
+    function init() {
+      if ($window.sessionStorage["userInfo"]) {
+        userInfo = JSON.parse($window.sessionStorage["userInfo"]);
+      }
+    }
+
+    init();
     return object;
 });

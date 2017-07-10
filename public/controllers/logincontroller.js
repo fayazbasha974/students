@@ -1,7 +1,7 @@
-app.controller('loginCtrl', function($scope, $location, customFactory){
+app.controller('loginCtrl', function($scope, $location, login){
   $scope.loginuser = function(user) {
-    customFactory.url = '/login';
-    customFactory.post(user).then(function(success) {
+    //customFactory.url = '/login';
+    login.login(user).then(function(success) {
       console.log(success);
       if(success.data.code == 1 && !success.data.data.isAdmin) {
         swal('Logged in Successfully');

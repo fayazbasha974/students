@@ -11,21 +11,75 @@ app.config(function($routeProvider) {
     })
     .when("/application", {
         templateUrl : "views/application.html",
-        controller : "applicationCtrl"
+        controller : "applicationCtrl",
+        resolve: {
+          auth: ["$q", "login", function($q, login) {
+            var userInfo = login.getUserInfo();
+
+            if (userInfo) {
+              return $q.when(userInfo);
+            } else {
+              return $q.reject({ authenticated: false });
+            }
+          }]
+        }
     })
     .when("/profile", {
         templateUrl : "views/profile.html",
-        controller : "profileCtrl"
+        controller : "profileCtrl",
+        resolve: {
+          auth: ["$q", "login", function($q, login) {
+            var userInfo = login.getUserInfo();
+
+            if (userInfo) {
+              return $q.when(userInfo);
+            } else {
+              return $q.reject({ authenticated: false });
+            }
+          }]
+        }
     })
     .when("/userprofile", {
         templateUrl : "views/userprofile.html",
-        controller : "userprofilecontroller"
+        controller : "userprofilecontroller",
+        resolve: {
+          auth: ["$q", "login", function($q, login) {
+            var userInfo = login.getUserInfo();
+
+            if (userInfo) {
+              return $q.when(userInfo);
+            } else {
+              return $q.reject({ authenticated: false });
+            }
+          }]
+        }
     })
     .when("/userdetails",{
         templateUrl : "views/userdata.html",
-        controller : "userdatacontroller"
+        controller : "userdatacontroller",
+        resolve: {
+          auth: ["$q", "login", function($q, login) {
+            var userInfo = login.getUserInfo();
+
+            if (userInfo) {
+              return $q.when(userInfo);
+            } else {
+              return $q.reject({ authenticated: false });
+            }
+          }]
+        }
     })
-}).directive('textOnly', function(){
+}).run(["$rootScope", "$location", function($rootScope, $location) {
+  $rootScope.$on("$routeChangeSuccess", function(userInfo) {
+    console.log(userInfo);
+  });
+
+  $rootScope.$on("$routeChangeError", function(event, current, previous, eventObj) {
+    if (eventObj.authenticated === false) {
+      $location.path("/login");
+    }
+  });
+}]).directive('textOnly', function(){
    return {
      require: 'ngModel',
      link: function(scope, element, attrs, modelCtrl) {
@@ -63,6 +117,11 @@ app.config(function($routeProvider) {
        });
      }
    };
-}).controller('myCtrl', function($scope){
+}).controller('myCtrl', function($scope, $window, $location){
   console.log("main controller");
+  $scope.logout = function(){
+    console.log("logout");
+    $window.sessionStorage["userInfo"] = null;
+    $location.path('/');
+  }
 });
