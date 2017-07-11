@@ -4,6 +4,18 @@ var address = require('../customdatatypes/datatypes');
 var Address = address.address;
 var crypto = require('crypto');
 var jwt = require('jsonwebtoken');
+var database = require('../database/database');
+var db = mongoose.connect(database.database);
+//on connection mongoose
+mongoose.connection.on('connected', function() {
+    console.log('Database connected successfully ' +database.database);
+});
+
+mongoose.connection.on('error', function(err) {
+  console.log('Database not connected ' +err);
+});
+var  autoIncrement = require('mongoose-auto-increment');
+autoIncrement.initialize(db);
 
 var newuser = mongoose.Schema({
   title:  String,
@@ -34,6 +46,7 @@ var newuser = mongoose.Schema({
 });
 
 var application = mongoose.Schema({
+  applicationId: {type: Number, unique: true},
   title:  String,
   firstname: String,
   middlename: String,
@@ -58,6 +71,13 @@ var application = mongoose.Schema({
   permanentAddress : Address,
   edImage:String,
   engProfImage:String
+});
+
+application.plugin(autoIncrement.plugin, {
+    model: 'applications',
+    field: 'applicationId',
+    startAt: 1111,
+    incrementBy: 1
 });
 
 newuser.methods.setPassword = function(password) {
