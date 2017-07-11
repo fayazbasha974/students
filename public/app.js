@@ -122,7 +122,7 @@ app.config(function($routeProvider) {
   $scope.logout = function(){
     console.log("log out");
     login.logout().then(function(success){
-      console.log(success);
+      //console.log(success);
       $location.path('/');
     },
       function(error){
