@@ -23,5 +23,9 @@ router.post('/changepassword', function(req,res,next) {
 router.post('/resetpassword', function(req,res,next) {
   controller.resetPassword(req,res);
 });
+//logout functionality
+router.post('/logout', function(req,res,next) {
+  controller.logoutuser(req,res);
+});
 
 module.exports = router;

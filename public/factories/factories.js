@@ -61,6 +61,24 @@ app.factory('customFactory',function($http,$q){
     object.getUserInfo = function() {
       return userInfo;
     }
+    object.logout = function(){
+        var defered = $q.defer();
+        $http({
+            url :'/logout',
+            method : 'POST',
+            data : null
+        }).then(function(success){
+            $window.sessionStorage["userInfo"] = null;
+            userInfo = null; 
+            defered.resolve(success);
+        },
+            function(error){
+                console.log(error);
+                defered.reject(error);
+            }
+        )
+        return defered.promise;
+    }
     function init() {
       if ($window.sessionStorage["userInfo"]) {
         userInfo = JSON.parse($window.sessionStorage["userInfo"]);

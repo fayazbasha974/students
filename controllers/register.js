@@ -89,6 +89,11 @@ exports.fetchApplications = function(req, res){
     })
 }
 
+// user logout functionality
+exports.logoutuser = function(req,res,next){
+    res.json({msg:'user logged out Successfully', code:1});
+}
+// end of user logout functionality
 
 // user login 
 exports.loginUser = function(req,res) {

@@ -117,11 +117,17 @@ app.config(function($routeProvider) {
        });
      }
    };
-}).controller('myCtrl', function($scope, $window, $location){
+}).controller('myCtrl', function($scope, login, $location){
   console.log("main controller");
   $scope.logout = function(){
-    console.log("logout");
-    $window.sessionStorage["userInfo"] = null;
-    $location.path('/');
+    console.log("log out");
+    login.logout().then(function(success){
+      console.log(success);
+      $location.path('/');
+    },
+      function(error){
+        console.log(error);
+      }
+    )
   }
 });
