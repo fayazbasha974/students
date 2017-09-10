@@ -13,6 +13,7 @@ app.controller('loginCtrl', function($scope, $location, login){
        else if(success.data.code == 0){
         swal('Invalid Credentials');
       } else {
+        
         swal('Invalid Credentials');
       }
     })
