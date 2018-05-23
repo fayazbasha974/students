@@ -16,6 +16,13 @@ router.get('/getStudents', function(req, res, next){
   controller.getUsers(req, res);
 })
 
+router.post('/updateStudent', function(req, res, next){
+  controller.updateUser(req, res);
+})
+
+router.post('/deleteStudent', function(req, res, next){
+  controller.deleteUser(req, res);
+})
 // router.post('/login', function(req, res, next) {
 //   controller.loginUser(req,res);
 // });

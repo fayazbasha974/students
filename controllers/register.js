@@ -6,32 +6,34 @@ var userdetails = require('../models/register').registerschema;
 
 exports.insertUser = function (req, res) {
     var user = new userdetails(req.body);
-    // userdetails.find({ emailId: req.body.email }, function (err, docs) {
-    //     if (err) throw err;
-    //     if (docs[0] != null) {
-    //         res.json({ success: false, msg: 'Email ID already exists ', code: 0 })
-    //     }
-    //     else {
-    //         user.setPassword(req.body.password);
-    //         user.save(function (err, data) {
-    //             if (err) throw err;
-    //             res.json({ success: true, msg: 'User Registered Successfully', code: 1 });
-    //         });
-    //     }
-    // });
-    user.save(function(err, data){
-        if(err) throw err;
-        res.json({ status: true, message: 'Successfully Registered'});
+    user.save(function (err, data) {
+        if (err) throw err;
+        res.json({ status: true, message: 'Successfully Registered' });
     })
 
 }
 
-exports.getUsers= function(req, res){
+exports.getUsers = function (req, res) {
     userdetails.find({}, function (err, docs) {
         if (err) throw err;
         else if (docs.length) {
             res.json(docs);
         }
+    })
+}
+
+exports.updateUser = function (req, res) {
+    userdetails.findOneAndUpdate({_id:req.body._id}, req.body, function (err, place) {
+        res.json(place);
+      });
+}
+
+exports.deleteUser = function(req, res){
+    userdetails.findByIdAndRemove(req.body._id, function(err,result){
+        if(err){
+            res.json(err);
+        }
+        res.json(result);
     })
 }
 

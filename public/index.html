@@ -408,13 +408,13 @@
                             </td>
                             <td>
                                 <a href="#viewEmployeeModal" class="view" data-toggle="modal">
-                                    <i class="fa fa-eye" aria-hidden="true"></i>
+                                    <i class="fa fa-eye" aria-hidden="true" ng-click="viewStudents(student)"></i>
                                 </a>
                                 <a href="#editEmployeeModal" class="edit" data-toggle="modal">
-                                    <i class="fa fa-pencil" aria-hidden="true"></i>
+                                    <i class="fa fa-pencil" aria-hidden="true" ng-click="editStudents(student)"></i>
                                 </a>
                                 <a href="#deleteEmployeeModal" class="delete" data-toggle="modal">
-                                    <i class="fa fa-trash" aria-hidden="true"></i>
+                                    <i class="fa fa-trash" aria-hidden="true" ng-click="deleteStudents(student)"></i>
                                 </a>
                             </td>
                         </tr>
@@ -508,75 +508,80 @@
                         <div class="modal-body">
                             <div class="form-group row">
                                 <div class="col-4">
-
                                     <label>
                                         <strong>First Name : </strong>
                                     </label>
                                 </div>
                                 <div class="col-8">
-
-                                    <label>Venu</label>
+                                    <label>
+                                        <input type="text" name="studentName" ng-model="viewStudent.studentDetails.firstName">
+                                    </label>
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <div class="col-4">
-
                                     <label>
                                         <strong>Last Name : </strong>
                                     </label>
                                 </div>
                                 <div class="col-8">
-
-                                    <label>Reddy</label>
+                                    <label>
+                                        <input type="text" name="studentName" ng-model="viewStudent.studentDetails.lastName">
+                                    </label>
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <div class="col-4">
-
                                     <label>
                                         <strong>Date of Birth : </strong>
                                     </label>
                                 </div>
                                 <div class="col-8">
-
-                                    <label>08-04-1993</label>
+                                    <label>
+                                        <input type="text" name="studentName" ng-model="viewStudent.studentDetails.dateOfBirth">
+                                    </label>
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <div class="col-4">
-
                                     <label>
                                         <strong>Nationality : </strong>
                                     </label>
                                 </div>
                                 <div class="col-8">
 
-                                    <label>Indian</label>
+                                    <label>
+                                        <input type="text" name="studentName" ng-model="viewStudent.studentDetails.nationality">
+                                    </label>
                                 </div>
                             </div>
                             <h4>Family Details</h4>
-                            <div class="form-group row">
-                                <div class="col-4">
-                                    <label>
-                                        <strong>Name : </strong>
-                                    </label>
+                            <span ng-repeat="x in viewStudent.familyDetails">
+                                <div class="form-group row">
+                                    <div class="col-4">
+                                        <label>
+                                            <strong>Name : </strong>
+                                        </label>
+                                    </div>
+                                    <div class="col-8">
+                                        <label>
+                                            <input type="text" name="studentName" ng-model="x.name">
+                                        </label>
+                                    </div>
                                 </div>
-                                <div class="col-8">
-
-                                    <label>xxxxx</label>
+                                <div class="form-group row">
+                                    <div class="col-4">
+                                        <label>
+                                            <strong>Relationship : </strong>
+                                        </label>
+                                    </div>
+                                    <div class="col-8">
+                                        <label>
+                                            <input type="text" name="studentName" ng-model="x.relationship">
+                                        </label>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-4">
-                                    <label>
-                                        <strong>Relationship : </strong>
-                                    </label>
-                                </div>
-                                <div class="col-8">
-
-                                    <label>Spouse</label>
-                                </div>
-                            </div>
+                            </span>
                             <div class="form-group row">
                                 <div class="col-4">
                                     <label>
@@ -584,8 +589,9 @@
                                     </label>
                                 </div>
                                 <div class="col-8">
-
-                                    <label>Indian</label>
+                                    <label>
+                                        <input type="text" name="studentName" ng-model="viewStudent.studentDetails.nationality">
+                                    </label>
                                 </div>
                             </div>
                         </div>
@@ -613,12 +619,13 @@
                                 </div>
                                 <div class="form-group">
                                     <label>Last Name</label>
-                                    <input type="text" class="form-control"  ng-model="student.studentDetails.lastName" required="">
+                                    <input type="text" class="form-control" ng-model="student.studentDetails.lastName" required="">
                                 </div>
                                 <div class="form-group">
                                     <label>Date of Birth</label>
                                     <div class="input-group">
-                                        <input class="form-control" id="date" name="date" placeholder="MM/DD/YYYY" type="text"  ng-model="student.studentDetails.dateOfBirth" />
+                                        <input class="form-control" id="date" name="date" placeholder="MM/DD/YYYY" type="text" ng-model="student.studentDetails.dateOfBirth"
+                                        />
                                         <div class="input-group-addon">
                                             <i class="fa fa-calendar icon-cal">
                                             </i>
@@ -628,19 +635,21 @@
                             </div>
                             <div class="col-6">
                                 <h5>Family Details</h5>
-                                <div class="form-group">
-                                    <label>Name</label>
-                                    <input type="text" class="form-control" ng-model="student.familyDetails[0].name" required="">
-                                </div>
-                                <div class="form-group">
-                                    <label>Relationship</label>
-                                    <select class="form-control" ng-model="student.familyDetails[0].relationship">
-                                        <option>Select Relationship</option>
-                                        <option>Parent</option>
-                                        <option>Sibling</option>
-                                        <option>Spouse</option>
-                                    </select>
-                                </div>
+                                <span ng-repeat="x in student.familyDetails">
+                                    <div class="form-group">
+                                        <label>Name</label>
+                                        <input type="text" class="form-control" ng-model="x.name" required="">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Relationship</label>
+                                        <select class="form-control" ng-model="x.relationship">
+                                            <option>Select Relationship</option>
+                                            <option>Parent</option>
+                                            <option>Sibling</option>
+                                            <option>Spouse</option>
+                                        </select>
+                                    </div>
+                                </span>
                                 <div class="form-group">
                                     <label>Nationality</label>
                                     <select class="form-control" ng-model="student.studentDetails.nationality">
@@ -650,7 +659,7 @@
                                         <option>USA</option>
                                     </select>
                                 </div>
-                                <input type="button" class="btn btn-primary" value="Add Family Members">
+                                <input type="button" class="btn btn-primary" value="Add Family Members" ng-click="addFamilyMember('add')">
                             </div>
                         </div>
                         <div class="modal-footer">
@@ -675,16 +684,17 @@
                                 <h5>Student Details</h5>
                                 <div class="form-group">
                                     <label>First Name</label>
-                                    <input type="text" class="form-control" required="">
+                                    <input type="text" class="form-control" ng-model="editStudent.studentDetails.firstName">
                                 </div>
                                 <div class="form-group">
                                     <label>Last Name</label>
-                                    <input type="text" class="form-control" required="">
+                                    <input type="text" class="form-control" required="" ng-model="editStudent.studentDetails.lastName">
                                 </div>
                                 <div class="form-group">
                                     <label>Date of Birth</label>
                                     <div class="input-group">
-                                        <input class="form-control" id="date" name="date" placeholder="MM/DD/YYYY" type="text" />
+                                        <input class="form-control" id="date" name="date" placeholder="MM/DD/YYYY" type="text" ng-model="editStudent.studentDetails.dateOfBirth"
+                                        />
                                         <div class="input-group-addon">
                                             <i class="fa fa-calendar icon-cal">
                                             </i>
@@ -694,34 +704,36 @@
                             </div>
                             <div class="col-6">
                                 <h5>Family Details</h5>
-                                <div class="form-group">
-                                    <label>Name</label>
-                                    <input type="text" class="form-control" required="">
-                                </div>
-                                <div class="form-group">
-                                    <label>Relationship</label>
-                                    <select class="form-control">
-                                        <option>Select Relationship</option>
-                                        <option>Parent</option>
-                                        <option>Sibling</option>
-                                        <option>Spouse</option>
-                                    </select>
-                                </div>
+                                <span ng-repeat="x in editStudent.familyDetails">
+                                    <div class="form-group">
+                                        <label>Name</label>
+                                        <input type="text" class="form-control" required="" ng-model="x.name">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Relationship</label>
+                                        <select class="form-control" ng-model="x.relationship">
+                                            <option>Select Relationship</option>
+                                            <option value="Parent">Parent</option>
+                                            <option value="Sibling">Sibling</option>
+                                            <option value="Spouse">Spouse</option>
+                                        </select>
+                                    </div>
+                                </span>
                                 <div class="form-group">
                                     <label>Nationality</label>
-                                    <select class="form-control">
+                                    <select class="form-control" ng-model="editStudent.studentDetails.nationality">
                                         <option>Select Nationality</option>
-                                        <option>India</option>
-                                        <option>UAE</option>
-                                        <option>USA</option>
+                                        <option value="India">India</option>
+                                        <option value="UAE">UAE</option>
+                                        <option value="USA">USA</option>
                                     </select>
                                 </div>
-                                <input type="button" class="btn btn-primary" value="Add Family Members">
+                                <input type="button" class="btn btn-primary" value="Add Family Members" ng-click="addFamilyMember('edit')">
                             </div>
                         </div>
                         <div class="modal-footer">
                             <input type="button" class="btn btn-outline-primary" data-dismiss="modal" value="Cancel">
-                            <input type="submit" class="btn btn-info" value="Save">
+                            <input type="submit" class="btn btn-info" value="Save" ng-click="studentEdit()">
                         </div>
                     </form>
                 </div>
@@ -744,7 +756,7 @@
                         </div>
                         <div class="modal-footer">
                             <input type="button" class="btn btn-outline-primary" data-dismiss="modal" value="Cancel">
-                            <input type="submit" class="btn btn-danger" value="Delete">
+                            <input type="submit" class="btn btn-danger" value="Delete" ng-click="confirmDelete()">
                         </div>
                     </form>
                 </div>
